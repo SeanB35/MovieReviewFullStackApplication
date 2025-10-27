@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Full-Stack Movie Review Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack web application for reviewing movies, built as a project following the FreeCodeCamp tutorial series.
 
-## Available Scripts
+The application is split into two distinct repositories (or folders): a **React Frontend** and a **Spring Boot Backend**.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Technology Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Component | Technology | Description |
+| :--- | :--- | :--- |
+| **Frontend** | **React.js** (via create-react-app) | User interface and client-side logic. |
+| **Backend** | **Spring Boot** (Java) | REST API to handle business logic and data access. |
+| **Database** | **MongoDB** | NoSQL database used for storing movie and review data. |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ⚙️ Setup and Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these steps to get both the backend and frontend running locally.
 
-### `npm run build`
+### 1. Backend Setup (Spring Boot)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1.  **Clone the Backend Repository:**
+    ```bash
+    git clone [https://github.com/SeanB35/MovieReviewBackend.git](https://github.com/SeanB35/MovieReviewBackend.git)
+    cd MovieReviewBackend
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2.  **Configure Database:**
+    * Ensure you have a local instance of **MongoDB** running, or update the `application.properties` or `application.yml` file to point to your remote MongoDB URI.
+    * The property to look for is typically: `spring.data.mongodb.uri=mongodb://localhost:27017/moviereviews`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3.  **Run the Application:**
+    * Open the project in **IntelliJ IDEA**.
+    * Run the main application class (the one annotated with `@SpringBootApplication`).
+    * *The backend server will start on port 8080 (or as configured).*
 
-### `npm run eject`
+### 2. Frontend Setup (React)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1.  **Clone the Frontend Repository:**
+    * *(If you are already in the correct folder, skip the clone step.)*
+    ```bash
+    git clone [https://github.com/SeanB35/MovieReviewFullStackApplication.git](https://github.com/SeanB35/MovieReviewFullStackApplication.git)
+    cd MovieReviewFullStackApplication
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2.  **Install Dependencies:**
+    ```bash
+    npm install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3.  **Start the Client:**
+    ```bash
+    npm start
+    ```
+    * *The client will start, usually opening your browser to `http://localhost:3000`.*
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📂 Project Structure Overview
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project is organized into two separate folders/repositories:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1.  **`MovieReviewBackend`** (`https://github.com/SeanB35/MovieReviewBackend.git`)
+    * Contains all Java code, controllers, services, and repository interfaces.
+    * Handles all communication with the MongoDB database.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2.  **`MovieReviewFullStackApplication`** (`https://github.com/SeanB35/MovieReviewFullStackApplication.git`)
+    * Contains all JavaScript/React components, styles, and assets.
+    * Makes HTTP requests to the backend API running on port 8080.
